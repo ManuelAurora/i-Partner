@@ -7,14 +7,24 @@
 //
 
 import Foundation
+import UIKit
 
-class NetworkManaged
+class NetworkManager
 {
-    let session = URLSession.shared
+    private let session = URLSession.shared
     
-    var sessionID: String?
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    var textToPost: String?
+    var sessionID: String? {
+        didSet
+        {
+            guard sessionID != nil else { return }
+            
+            self.requestWithMethod(Network.Methods.getEntries)
+        }
+    }
+    
+    var recordToPost: Record?
     
     func requestWithMethod(_ method: String) {
         
@@ -31,7 +41,7 @@ class NetworkManaged
         case Network.Methods.addEntry:
             
             postString += "&session=\(sessionID!)"
-            postString += "&body=\(textToPost!)"
+            postString += "&body=\((recordToPost!.text))"
             
         case Network.Methods.getEntries:
             postString += "&session=\(sessionID!)"
@@ -58,17 +68,36 @@ class NetworkManaged
             {
                 let jsonData = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String: AnyObject]
                 
-                if let responseData = jsonData["data"] as? [String: AnyObject], let responseSesionID = responseData["session"] as? String
+                if let responseData = jsonData["data"] as? [String: AnyObject]
                 {
-                    self.sessionID = responseSesionID
+                    if let responseSesionID = responseData["session"] as? String
+                    {
+                        self.sessionID = responseSesionID
+                        
+                        self.saveSession(id: responseSesionID)
+                    }
+                    
+                    if let responseEntryID = jsonData["id"] as? String
+                    {
+                        self.recordToPost?.id = responseEntryID
+                        
+                        print("Debug: \(responseEntryID)")
+                    }
                 }
                 
-                if let responseData = jsonData["data"] as? [[String: AnyObject]] {
+                if let responseData = jsonData["data"] as? [[[String: AnyObject]]] {
                     
-                    print("watewa")
-                    
+                    for array in responseData
+                    {
+                        let q = DispatchQueue.main
+                        
+                        q.async {
+                            self.appDelegate.records = self.createRecords(from: array)
+                        }
+                        
+                        
+                    }
                 }
-                
             }
             catch let error
             {
@@ -76,6 +105,37 @@ class NetworkManaged
             }
         }
         task.resume()
+    }
+    
+    class func sharedInstance() -> NetworkManager {
+        
+        struct Singleton
+        {
+            static let manager = NetworkManager()
+        }
+        
+        return Singleton.manager
+    }
+    
+    private func createRecords(from array: [[String: AnyObject]]) -> [Record] {
+        
+        var arrayOfRecords = [Record]()
+        
+        for dict in array
+        {
+            let record = Record(from: dict)
+            
+            arrayOfRecords.append(record)
+        }
+        
+        return arrayOfRecords
+    }
+    
+    private func saveSession(id: String)
+    {
+        let defaults = UserDefaults.standard
+        
+        defaults.set(sessionID!, forKey: "sessionID")        
     }
     
 }

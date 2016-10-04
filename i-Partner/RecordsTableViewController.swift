@@ -10,45 +10,63 @@ import UIKit
 
 class RecordsTableViewController: UITableViewController
 {
-    var records = [Record]()
+    
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    private lazy var formatter: DateFormatter = {
+        
+        let fm = DateFormatter()
+        
+        fm.dateFormat = "d MMMM hh:mm"
+ 
+        return fm
+    }()
     
     @IBAction func createNewRecord(_ sender: UIBarButtonItem) {
-        
+                
         createRecord()
+        
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let manager = NetworkManaged()
+        let defaults = UserDefaults.standard
         
-        manager.requestWithMethod(Network.Methods.newSession)
+        let manager = NetworkManager.sharedInstance()
         
-        let date  = Date()
-        let text  = "If a property always takes the same initial value, provide a default value rather than setting a value within an initializer. The end result is the same, but the default value ties the property’s initialization more closely to its declaration. It makes for shorter, clearer initializers and enables you to infer the type of the property from its default value. The default value also makes it easier for you to take advantage of default initializers and initializer inheritance, as described later in this chapter."
-        
-        let record = Record(with: date, and: text)
-        
-        records.append(record)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        if let id = defaults.string(forKey: "sessionID")
+        {
+            NetworkManager.sharedInstance().sessionID = id
+        }
+        else
+        {
+            manager.requestWithMethod(Network.Methods.newSession)
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return records.count
+        return appDelegate.records.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let record = records[indexPath.row]
+        
+        let record = appDelegate.records[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.ID.recordCell) as! RecordTableViewCell
         
-        cell.dateCreatedLabel.text = record.dateCreated.description
-        cell.textView.text         = record.text
+        if record.modified, let dateMod = record.dateModified {
+            cell.dateModifiedLabel.text = formatter.string(from: dateMod)
+        }
         
+        cell.dateCreatedLabel.text = formatter.string(from: record.dateCreated)
+        
+        cell.textView.text = record.text
+        
+        cell.dateModifiedLabel.isHidden = !record.modified
+        cell.modifiedLabel.isHidden     = !record.modified
+                    
         return cell
     }
     
@@ -63,7 +81,7 @@ class RecordsTableViewController: UITableViewController
         
         if let sender = sender as? RecordTableViewCell
         {
-            destinationVC.record = records[tableView.indexPath(for: sender)!.row]
+            destinationVC.record = appDelegate.records[tableView.indexPath(for: sender)!.row]
         }
     }
     

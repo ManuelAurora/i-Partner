@@ -6,15 +6,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "i-Partner/RecordDetailViewController.swift"
-            timestampString = "497264149.179277"
+            filePath = "i-Partner/CreateNewRecordViewController.swift"
+            timestampString = "497284933.681934"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "saveRecord(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "i-Partner/RecordDetailViewController.swift"
-            timestampString = "497264167.409531"
+            filePath = "i-Partner/RecordsTableViewController.swift"
+            timestampString = "497284557.567563"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "saveRecord(_:)"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,45 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "i-Partner/NetworkManager.swift"
-            timestampString = "497276919.010213"
+            timestampString = "497283492.728451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "requestWithMethod(_:)"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "saveSession(id:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "i_Partner.NetworkManaged.(requestWithMethod (Swift.String) -&gt; ()).(closure #1)"
-                  moduleName = "i-Partner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Volume/Projects/i-Partner/i-Partner/NetworkManager.swift"
-                  timestampString = "497277068.054223"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "2755">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "i_Partner.NetworkManaged.(requestWithMethod (Swift.String) -&gt; ()).(closure #1)"
-                  moduleName = "i-Partner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Volume/Projects/i-Partner/i-Partner/NetworkManager.swift"
-                  timestampString = "497277068.055615"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "3115">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -89,46 +57,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "i-Partner/NetworkManager.swift"
-            timestampString = "497276921.248295"
+            filePath = "i-Partner/Record.swift"
+            timestampString = "497282478.25725"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "requestWithMethod(_:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "init(from:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "i_Partner.NetworkManaged.(requestWithMethod (Swift.String) -&gt; ()).(closure #1)"
-                  moduleName = "i-Partner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Volume/Projects/i-Partner/i-Partner/NetworkManager.swift"
-                  timestampString = "497277068.059597"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "1383">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "i_Partner.NetworkManaged.(requestWithMethod (Swift.String) -&gt; ()).(closure #1)"
-                  moduleName = "i-Partner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Volume/Projects/i-Partner/i-Partner/NetworkManager.swift"
-                  timestampString = "497277068.060697"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "1758">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

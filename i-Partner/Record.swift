@@ -14,6 +14,7 @@ struct Record
     var dateModified: Date?
     var text:         String
     var modified:     Bool = false
+    var id: String?
     
     init(with date: Date, and text: String) {
         
@@ -22,18 +23,22 @@ struct Record
         dateModified = nil
     }
     
-    init(from dict: [String: AnyObject]) {
+    init(from dict: [String: AnyObject]) {      
         
-        let formatter = DateFormatter()
         let da = dict["da"] as? String
         let dm = dict["dm"] as? String
         let textBody = dict["body"] as! String
+       
+        dateCreated = Date(timeIntervalSince1970: Double(da!)!)
         
-        dateCreated  = formatter.date(from: da!)!        
-        
-        if dm != nil {
-            dateModified = formatter.date(from: dm!)!
-            modified = true
+        if dm != nil
+        {
+            dateModified = Date(timeIntervalSince1970: Double(dm!)!)
+            
+            if da != dm
+            {
+                modified = true
+            }
         }
         
         text = textBody

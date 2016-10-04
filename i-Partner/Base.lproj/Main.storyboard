@@ -20,12 +20,12 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="151"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H1J-FN-BMa" id="2AZ-gP-j9m">
-                                    <frame key="frameInset" width="375" height="151"/>
+                                    <frame key="frameInset" width="375" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kqZ-Vt-egO">
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="kqZ-Vt-egO">
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="747" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="j2j-QI-tkE">
+                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" verticalHuggingPriority="251" horizontalCompressionResistancePriority="747" verticalCompressionResistancePriority="748" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="j2j-QI-tkE">
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcg-hG-91Y">
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -39,7 +39,7 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WDe-vi-JwN">
+                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="247" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WDe-vi-JwN">
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="01.01.0001" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NG9-1i-YEo">
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -113,7 +113,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PpJ-dQ-FDj">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PpJ-dQ-FDj">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -167,7 +167,7 @@
                         <constraints>
                             <constraint firstItem="wu6-yR-BUM" firstAttribute="top" secondItem="8th-T5-kHc" secondAttribute="bottom" constant="8" symbolic="YES" id="HK3-14-H97"/>
                             <constraint firstItem="8th-T5-kHc" firstAttribute="leading" secondItem="8E0-uX-FmX" secondAttribute="leading" constant="20" symbolic="YES" id="dg0-Fl-lhJ"/>
-                            <constraint firstItem="8th-T5-kHc" firstAttribute="top" secondItem="zpZ-ZI-sH4" secondAttribute="bottom" constant="57" id="fbw-yD-Ufd"/>
+                            <constraint firstItem="8th-T5-kHc" firstAttribute="top" secondItem="zpZ-ZI-sH4" secondAttribute="bottom" constant="19" id="fbw-yD-Ufd"/>
                             <constraint firstAttribute="trailing" secondItem="8th-T5-kHc" secondAttribute="trailing" constant="20" symbolic="YES" id="tXl-eL-v0r"/>
                         </constraints>
                     </view>
