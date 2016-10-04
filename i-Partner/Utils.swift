@@ -21,3 +21,17 @@ struct Storyboard
         static let recordCell  = "RecordCell"
     }
 }
+
+struct Network
+{
+    static let token = "YCa29lU-3m-h0bfdgG"
+    
+    static let url = "https://bnet.i-partner.ru/testAPI/"
+    
+    struct Methods
+    {
+        static let newSession = "new_session"
+        static let getEntries = "get_entries"
+        static let addEntry   = "add_entry"
+    }
+}

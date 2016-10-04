@@ -11,16 +11,32 @@ import Foundation
 struct Record
 {
     let dateCreated:  Date
-    let dateModified: Date?
+    var dateModified: Date?
     var text:         String
-    let modified:     Bool
+    var modified:     Bool = false
     
     init(with date: Date, and text: String) {
         
         dateCreated  = date
         self.text    = text
-        modified     = false
         dateModified = nil
+    }
+    
+    init(from dict: [String: AnyObject]) {
+        
+        let formatter = DateFormatter()
+        let da = dict["da"] as? String
+        let dm = dict["dm"] as? String
+        let textBody = dict["body"] as! String
+        
+        dateCreated  = formatter.date(from: da!)!        
+        
+        if dm != nil {
+            dateModified = formatter.date(from: dm!)!
+            modified = true
+        }
+        
+        text = textBody
     }
     
 }

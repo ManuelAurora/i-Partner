@@ -23,9 +23,11 @@ class RecordDetailViewController: UIViewController
     @IBOutlet weak var textView: UITextView!
     
     @IBAction func saveRecord(_ sender: UIBarButtonItem) {
-        record?.text = textView.text
+        
+        record?.text         = textView.text
+        record?.dateModified = Date()
         
         dismiss(animated: true, completion: nil)
     }
-
+    
 }

@@ -20,6 +20,10 @@ class RecordsTableViewController: UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let manager = NetworkManaged()
+        
+        manager.requestWithMethod(Network.Methods.newSession)
+        
         let date  = Date()
         let text  = "If a property always takes the same initial value, provide a default value rather than setting a value within an initializer. The end result is the same, but the default value ties the property’s initialization more closely to its declaration. It makes for shorter, clearer initializers and enables you to infer the type of the property from its default value. The default value also makes it easier for you to take advantage of default initializers and initializer inheritance, as described later in this chapter."
         
@@ -66,8 +70,9 @@ class RecordsTableViewController: UITableViewController
     func createRecord() {
         
         let controller    = storyboard?.instantiateViewController(withIdentifier: Storyboard.ID.newRecordVC) as! CreateNewRecordViewController
+        let navController = UINavigationController(rootViewController: controller)
         
-        present(controller, animated: true, completion: nil)        
+        present(navController, animated: true, completion: nil)
     }
 }
 
