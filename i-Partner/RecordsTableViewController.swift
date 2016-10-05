@@ -62,7 +62,7 @@ class RecordsTableViewController: UITableViewController
         
         cell.dateCreatedLabel.text = formatter.string(from: record.dateCreated)
         
-        cell.textView.text = record.text
+        cell.textView.text = showTwoHundredsLetters(of: record.text)
         
         cell.dateModifiedLabel.isHidden = !record.modified
         cell.modifiedLabel.isHidden     = !record.modified
@@ -85,12 +85,31 @@ class RecordsTableViewController: UITableViewController
         }
     }
     
-    func createRecord() {
+    private func createRecord() {
         
         let controller    = storyboard?.instantiateViewController(withIdentifier: Storyboard.ID.newRecordVC) as! CreateNewRecordViewController
         let navController = UINavigationController(rootViewController: controller)
         
         present(navController, animated: true, completion: nil)
+    }
+    
+    private func showTwoHundredsLetters(of string: String) -> String {
+    
+        var counter   = 0
+        var newString = ""
+        
+        for letter in string.characters
+        {
+            guard counter < 200 else { break }
+            
+            newString.append(letter)
+            
+            counter += 1
+        }
+        
+        if newString.characters.count == 200 { newString.append("...") }
+        
+        return newString
     }
 }
 

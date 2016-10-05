@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="151"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H1J-FN-BMa" id="2AZ-gP-j9m">
-                                    <frame key="frameInset" width="375" height="150"/>
+                                    <frame key="frameInset" width="375" height="151"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="kqZ-Vt-egO">
@@ -60,7 +60,6 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="83" id="uKN-D9-6NR"/>
                                             </constraints>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
@@ -115,7 +114,6 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PpJ-dQ-FDj">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -157,18 +155,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8th-T5-kHc">
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JBu-wq-dQS">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wu6-yR-BUM" firstAttribute="top" secondItem="8th-T5-kHc" secondAttribute="bottom" constant="8" symbolic="YES" id="HK3-14-H97"/>
-                            <constraint firstItem="8th-T5-kHc" firstAttribute="leading" secondItem="8E0-uX-FmX" secondAttribute="leading" constant="20" symbolic="YES" id="dg0-Fl-lhJ"/>
-                            <constraint firstItem="8th-T5-kHc" firstAttribute="top" secondItem="zpZ-ZI-sH4" secondAttribute="bottom" constant="19" id="fbw-yD-Ufd"/>
-                            <constraint firstAttribute="trailing" secondItem="8th-T5-kHc" secondAttribute="trailing" constant="20" symbolic="YES" id="tXl-eL-v0r"/>
+                            <constraint firstItem="JBu-wq-dQS" firstAttribute="top" secondItem="zpZ-ZI-sH4" secondAttribute="bottom" id="28X-nO-5Qe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JBu-wq-dQS" secondAttribute="trailing" id="QP1-dQ-Fxc"/>
+                            <constraint firstItem="JBu-wq-dQS" firstAttribute="leading" secondItem="8E0-uX-FmX" secondAttribute="leadingMargin" id="TcJ-5u-asb"/>
+                            <constraint firstItem="wu6-yR-BUM" firstAttribute="top" secondItem="JBu-wq-dQS" secondAttribute="bottom" id="dqe-yr-0t0"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -186,7 +184,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="textView" destination="8th-T5-kHc" id="O3Z-wn-HCM"/>
+                        <outlet property="textView" destination="JBu-wq-dQS" id="OL1-TX-xo5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ypy-EZ-8hc" userLabel="First Responder" sceneMemberID="firstResponder"/>

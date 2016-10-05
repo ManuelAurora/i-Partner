@@ -10,15 +10,8 @@ import UIKit
 
 class RecordDetailViewController: UIViewController
 {
-
-    var record: Record? {
-        didSet
-        {
-            guard textView != nil else { return }
-            
-            textView.text = record?.text
-        }
-    }
+    var record: Record?
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet weak var textView: UITextView!
     
@@ -26,8 +19,14 @@ class RecordDetailViewController: UIViewController
         
         record?.text         = textView.text
         record?.dateModified = Date()
+        record?.modified     = true
         
-        dismiss(animated: true, completion: nil)
+        self.navigationController!.popViewController(animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        textView.text = record?.text
+    }
 }
+

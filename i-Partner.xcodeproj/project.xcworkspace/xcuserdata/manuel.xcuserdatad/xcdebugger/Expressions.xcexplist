@@ -3,6 +3,25 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "RecordsTableViewController.showTwoHundredsLetters(of : String) -&gt; String:RecordsTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "newString.characters.count">
+            </PersistentString>
+            <PersistentString
+               value = "string.characters.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "NetworkManaged.connect() -&gt; ():NetworkManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "request.description">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "NetworkManaged.(connect() -&gt; ()).(closure #1):NetworkManager.swift">
          <PersistentStrings>
             <PersistentString
@@ -10,6 +29,25 @@
             </PersistentString>
             <PersistentString
                value = " jsonData[&quot;Data&quot;]?[&quot;session&quot;] ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RecordDetailViewController.record.didset:RecordDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "textView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "RecordDetailViewController.saveRecord(UIBarButtonItem) -&gt; ():RecordDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "record">
+            </PersistentString>
+            <PersistentString
+               value = "record?.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -25,10 +63,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "NetworkManaged.connect() -&gt; ():NetworkManager.swift">
+         contextName = "RecordsTableViewController.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():RecordsTableViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "request.description">
+               value = "appDelegate.records[tableView.indexPath(for: sender)!.row]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

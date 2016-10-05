@@ -57,7 +57,7 @@ class NetworkManager
         let task = session.dataTask(with: request) {
             data, response, error in
             
-            guard data != nil else { print(error); return }
+            guard data != nil else { print(error); self.showErrorToUser(); return }
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
                 
@@ -138,4 +138,23 @@ class NetworkManager
         defaults.set(sessionID!, forKey: "sessionID")        
     }
     
+    private func showErrorToUser() {
+        
+        let alert = UIAlertController(title: "Problem occurred", message: "Please, check your network connection", preferredStyle: .alert)
+        
+        let tryAgain = UIAlertAction(title: "Refresh", style: .default) { (_) in
+            
+            NetworkManager.sharedInstance().requestWithMethod(Network.Methods.getEntries)
+            
+            alert.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(tryAgain)        
+        
+        let navController = appDelegate.window?.rootViewController as! UINavigationController
+        
+        let vc = navController.visibleViewController
+        
+        vc?.present(alert, animated: true, completion: nil)
+    }
 }

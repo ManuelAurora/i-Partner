@@ -14,7 +14,7 @@ class CreateNewRecordViewController: UIViewController
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    @IBOutlet weak var textView: UITextField! {
+    @IBOutlet weak var textView: UITextView! {
         didSet
         {
             textView.becomeFirstResponder()
